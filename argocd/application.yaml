@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+
+metadata:
+  name: heartfelt
+  namespace: argocd
+
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/vindhyesh-p/heartfelt-stories-hub-gitops.git
+    targetRevision: main
+    path: helm/heartfelt
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
