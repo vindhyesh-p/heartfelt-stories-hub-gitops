@@ -1,6 +1,6 @@
 name: heartfelt
 
-replicaCount: 2
+replicaCount: 3
 
 image:
   repository: heartfeltacr12345.azurecr.io/heart-felt
