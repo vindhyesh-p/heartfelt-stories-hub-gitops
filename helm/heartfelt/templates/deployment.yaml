@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: "{{ .Values.name }}-app"
+
+spec:
+  replicas: {{ .Values.replicaCount}}
+
+  selector:
+    matchLabels:
+      app: heartfelt
+
+  template:
+
+    metadata:
+      labels:
+        app: heartfelt
+
+    spec:
+
+      containers:
+
+      - name: heartfelt
+
+        image: "{{ .Values.image.repository}}:{{ .Values.image.tag}}"
+
+        ports:
+        - containerPort: {{ .Values.containerPort }}

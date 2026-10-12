@@ -1,0 +1,15 @@
+name: heartfelt
+
+replicaCount: 2
+
+image:
+  repository: heartfeltacr12345.azurecr.io/heart-felt
+  tag: "228"
+
+containerPort: 80
+
+
+service:
+  type: LoadBalancer
+  port: 80
+  targetPort: 80
