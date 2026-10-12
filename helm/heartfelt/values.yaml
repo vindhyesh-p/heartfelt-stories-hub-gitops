@@ -4,7 +4,7 @@ replicaCount: 3
 
 image:
   repository: heartfeltacr12345.azurecr.io/heart-felt
-  tag: "227"
+  tag: "229"
 
 containerPort: 80
 
